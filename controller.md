@@ -49,7 +49,6 @@ Note: Users can update analog output from DAC0 to DAC3 with command `Panel_com('
 
 Note: Users can debug int0 to int4 with command `Panel_com('dio_test', chan)`
 
-
 # BNC Breakout
 
 The rear breakout connection of the panels controller can be used to utilize additional connections from the controller not present on the front of the controller.
@@ -84,4 +83,3 @@ The most recent production we are aware of was ordered by the Frye lab in August
 ├── eagle
 └── gerber
 ```
-
