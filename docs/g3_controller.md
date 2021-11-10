@@ -7,12 +7,16 @@ nav_order: 2
 
 # Controller
 
-Note: There is a new version of the panel controller in development right now, the new setup's changes are listed below.
+__Note__: There is a new version of the panel controller in development right now, the new setup's changes are listed below.
 
 - ADC0 now accepts Wing Beat Amplitude input to control X channel in modes 1 and 2. This input should be in the form of L-R. That is, with a negative gain in modes 1 and 2, a negative signal will cause a decrease in channel frame and a positive signal will cause an increase in channel frame number.
 - ADC1 now accepts Wing Beat Amplitude input to control Y channel in modes 1 and 2. This will happen in the same manner as ADC0.
 - ADC2 now sets the X position when the X mode is set to 3.
 - ADC3 now sets the Y position when the Y mode is set to 3.
+
+## Additional functions
+
+Two other repositories provide additional functionality for the controller: The [ISP breakout]({{site.baseurl}}/Generation%203/Breakout-ISP/docs/) board adds an interface to the controller and the possibility to directly interact with a [panel]({{site.baseurl}}/Generation%203/Hardware/docs/panel.html), while the [BNC breakout]({{site.baseurl}}/Generation%203/Breakout-BNC/docs/) board exposes some signals to additional BNC connectors.
 
 ## Controller V 3.0 Connector functionalities list
 
@@ -49,38 +53,15 @@ __Note__: Users can update analog output from DAC0 to DAC3 with command `Panel_c
 
 __Note__: Users can debug int0 to int4 with command `Panel_com('dio_test', chan)`
 
-# BNC Breakout
-
-![Controller pins](assets/controller_pin-numbers.jpg){:.ifr .pop}
-
-The rear breakout connection of the panels controller can be used to utilize additional connections from the controller not present on the front of the controller.
-
-| signal | 26pin header | 25pin D-sub (rear connector)|
-|:------ |:------------:|:---------------------------:|
-| 5V     |          1   |             13              |
-| GND    |          2   |             25              |
-| ADC0   |          3   |             12              |
-| ADC1   |          4   |             24              |
-| ADC2   |          5   |             11              |
-| ADC3   |          6   |             23              |
-| ADC4   |          7   |             10              |
-| ADC5   |          8   |             22              |
-| DAC0   |          9   |              9              |
-| DAC1   |         10   |             21              |
-| DAC2   |         11   |              8              |
-| DAC3   |         12   |             20              |
-| INT0   |         13   |              7              |
-| INT1   |         14   |             19              |
-| INT2   |         15   |              6              |
-| INT3   |         16   |             18              |
-
 # Project structure
 
 The Eagle design files are inside the `eagle` folder, the production files are available in `gerber`.
-
-The most recent production we are aware of was ordered by the Frye lab in August 2020 at [Bittele](https://7pcb.com). Feel free to use the reference number Q11396B in your communication with Bittele if you want to order the exact same Controller (`JF-MR-PC0003 RevC 2019_10_11`).
 
 ```sh
 ├── eagle
 └── gerber
 ```
+
+# Production
+
+The most recent production we are aware of was ordered by the Frye lab in August 2020 at [Bittele](https://7pcb.com). Feel free to use the reference number Q11396B in your communication with Bittele if you want to order the exact same Controller (`JF-MR-PC0003 RevC 2019_10_11`) and please get in [contact]({{site.baseurl}}/Contact) if you experience any problems.
