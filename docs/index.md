@@ -7,7 +7,12 @@ nav_order: 2
 
 # Controller
 
-__Note__: There is a new version of the panel controller in development right now, the new setup's changes are listed below.
+![](assets/panel_controller_rev_c_front.png){:.ifr .pop}
+![](assets/panel_controller_rev_c_back.png){:.ifr .pop .clear}
+
+The controller receives information about the pattern that needs to be displayed from the PC via serial port and sends control messages to all connected panels.
+
+The controller was developed under the project name __JF-MR-PC0002__, the most recent revision was __Rev C__ (also see preview of the [schematics](assets/panel_controller_rev_c_schematic.pdf)). The most recent production files are archived in `production_v1/JF-MR-PC0003_RevC.zip` (yes, there is different number…).
 
 - ADC0 now accepts Wing Beat Amplitude input to control X channel in modes 1 and 2. This input should be in the form of L-R. That is, with a negative gain in modes 1 and 2, a negative signal will cause a decrease in channel frame and a positive signal will cause an increase in channel frame number.
 - ADC1 now accepts Wing Beat Amplitude input to control Y channel in modes 1 and 2. This will happen in the same manner as ADC0.
@@ -16,16 +21,16 @@ __Note__: There is a new version of the panel controller in development right no
 
 ## Additional functions
 
-Two other repositories provide additional functionality for the controller: The [ISP breakout]({{site.baseurl}}/Generation%203/Breakout-ISP/docs/) board adds an interface to the controller and the possibility to directly interact with a [panel]({{site.baseurl}}/Generation%203/Hardware/docs/panel.html), while the [BNC breakout]({{site.baseurl}}/Generation%203/Breakout-BNC/docs/) board exposes some signals to additional BNC connectors.
+Two other repositories provide additional functionality for the controller: The [ISP breakout]({{site.baseurl}}/Generation%203/Breakout-ISP/docs/) board adds an interface to the controller and the possibility to directly interact with a [panel board]({{site.baseurl}}/Generation%203/Hardware/docs/panel.html), while the [BNC breakout]({{site.baseurl}}/Generation%203/Breakout-BNC/docs/) board exposes some signals to additional BNC connectors.
 
 ## Controller V 3.0 Connector functionalities list
 
-- ADC0:   analog input in mode 1 and 2 of channel x;
-- ADC1:   analog input in mode 1 and 2 of channel x
-- ADC2:   analog input in mode 1 and 2 of channel y
-- ADC3:   analog input in mode 1 and 2 of channel y
-- ADC4:   analog input in mode 3 of channel x
-- ADC5:   analog input in mode 3 of channel y
+- ADC0: analog input in mode 1 and 2 of channel x;
+- ADC1: analog input in mode 1 and 2 of channel x
+- ADC2: analog input in mode 1 and 2 of channel y
+- ADC3: analog input in mode 1 and 2 of channel y
+- ADC4: analog input in mode 3 of channel x
+- ADC5: analog input in mode 3 of channel y
 
 __Note__: Users can debug  ADC0 to ADC5 with command `Panel_com('adc_test', chan)` or `Panel_com('dio_test', chan)`
 
